@@ -82,6 +82,28 @@ The implementation is completely self-contained and doesn't require any cloud-ba
 
 > **Note**: Using Anaconda is recommended as it helps manage package dependencies and avoid conflicts, especially with PyTorch and other ML libraries.
 
+## Saving Generated Audio
+
+By default, the system generates temporary audio files that are automatically deleted after playback. If you want to permanently save the generated audio, you have two options:
+
+1. **Using Gradio Interface**:
+   - Simply download the audio file directly from the web interface's play button.
+
+2. **Modifying the Code**:
+   Replace the current temporary file generation with a permanent save method (Lines 58-62 in tts_system.py):
+   ```python
+   # Save with a custom filename 
+   output_path = f"output_{datetime.now().strftime('%Y%m%d_%H%M%S')}.wav"
+   sf.write(output_path, wav, 22050)
+   return output_path
+   ```
+
+   Note: Remember to import the necessary modules:
+   ```python
+   import datetime
+   import soundfile as sf
+   ```
+
 ## Usage
 
 ### Web Interface
