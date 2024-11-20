@@ -1,4 +1,4 @@
-# Multilingual Text-to-Speech (TTS) System
+# Multilingual Text-to-Speech (TTS) Tool
 
 A Text-to-Speech system powered by the **Your_TTS** pre-trained model, capable of generating natural-sounding speech in English, French, and Portuguese with Male, Female, and Robotic voice options.
 
